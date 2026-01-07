@@ -1,264 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Δ Delthium — Layer-1 Blockchain</title>
-<!-- Basic Security Headers -->
+  <meta charset="UTF-8" />
+  <title>Delthium — Layer-1 Blockchain</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<meta http-equiv="Content-Security-Policy"
-      content="
-        default-src 'self';
-        img-src 'self' https: data:;
-        style-src 'self' 'unsafe-inline' https:;
-        script-src 'self' https:;
-        font-src 'self' https: data:;
-      ">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #0b0f14;
+      color: #e5e7eb;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      overflow-x: hidden;
+    }
 
-<meta http-equiv="X-Content-Type-Options" content="nosniff">
-<meta http-equiv="X-Frame-Options" content="DENY">
-<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-<meta http-equiv="Permissions-Policy"
-      content="camera=(), microphone=(), geolocation=()">
-<!-- Tailwind -->
-<script src="https://cdn.tailwindcss.com"></script>
+    /* ===== Animated Background ===== */
+    #network-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+    }
 
-<!-- Inter Font -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    /* ===== Page Content ===== */
+    .page-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: auto;
+      padding: 90px 20px 120px;
+      text-align: center;
+    }
 
-<style>
-  body {
-    font-family: 'Inter', system-ui, sans-serif;
-    background: radial-gradient(circle at center, #120a05, #05050c 70%);
-    overflow-x: hidden;
-  }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
 
-  /* ===== CENTRAL SUN / NETWORK CORE ===== */
-  .sun-glow {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 950px;
-    height: 950px;
-    transform: translate(-50%, -50%);
-    background: radial-gradient(circle,
-      rgba(255,200,120,1),
-      rgba(255,180,90,0.9),
-      rgba(255,140,60,0.5),
-      rgba(255,120,40,0.25),
-      transparent 70%);
-    filter: blur(150px);
-  }
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: #9ca3af;
+      margin-bottom: 24px;
+    }
 
-  /* ===== ORBITS ===== */
-  .orbit {
-    position: absolute;
-    border: 1px solid rgba(255,220,160,0.22);
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    animation: rotate linear infinite;
-  }
+    p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #d1d5db;
+      max-width: 720px;
+      margin: auto;
+    }
 
-  .orbit.one   { width: 420px; height: 420px; animation-duration: 36s; }
-  .orbit.two   { width: 620px; height: 620px; animation-duration: 60s; }
-  .orbit.three { width: 820px; height: 820px; animation-duration: 90s; }
+    /* ===== Button ===== */
+    .btn {
+      display: inline-block;
+      margin-top: 36px;
+      padding: 14px 36px;
+      border-radius: 999px;
+      border: 1px solid #facc15;
+      color: #facc15;
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      backdrop-filter: blur(8px);
+      transition: all 0.3s ease;
+    }
 
-  @keyframes rotate {
-    from { transform: translate(-50%, -50%) rotate(0deg); }
-    to   { transform: translate(-50%, -50%) rotate(360deg); }
-  }
+    .btn:hover {
+      background: rgba(250, 204, 21, 0.15);
+      box-shadow: 0 0 22px rgba(250, 204, 21, 0.4);
+    }
 
-  /* ===== PLANETS / NODES ===== */
-  .planet {
-    position: absolute;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background: radial-gradient(circle, #fff, #ffd27d, #f5c97a);
-    box-shadow: 0 0 14px rgba(255,210,120,0.9);
-  }
+    /* ===== Sections ===== */
+    section {
+      margin-top: 80px;
+      text-align: left;
+    }
 
-  .p1 { top: -7px; left: 50%; transform: translateX(-50%); }
-  .p2 { top: 50%; right: -7px; transform: translateY(-50%); }
-  .p3 { bottom: -7px; left: 50%; transform: translateX(-50%); }
-  .p4 { top: 50%; left: -7px; transform: translateY(-50%); }
-  .p5 { top: 14%; left: 76%; }
-  .p6 { top: 78%; left: 24%; }
+    section h3 {
+      font-size: 1.6rem;
+      margin-bottom: 14px;
+      color: #f9fafb;
+    }
 
-  /* ===== CONNECTING LINES (BLOCK FLOW) ===== */
-  .connections {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-  }
+    ul {
+      padding-left: 18px;
+    }
 
-  .beam {
-    position: absolute;
-    width: 2px;
-    height: 160px;
-    background: linear-gradient(
-      to bottom,
-      transparent,
-      rgba(255,210,120,0.9),
-      transparent
-    );
-    animation: beamFlow 3.5s linear infinite;
-    opacity: 0.7;
-  }
+    ul li {
+      margin-bottom: 10px;
+      color: #d1d5db;
+    }
 
-  @keyframes beamFlow {
-    from { transform: translateY(-160px); }
-    to   { transform: translateY(820px); }
-  }
-
-  /* beam placements */
-  .b1 { left: 50%; top: 0; animation-delay: 0s; }
-  .b2 { left: 47%; top: 0; animation-delay: 1.2s; }
-  .b3 { left: 53%; top: 0; animation-delay: 2.4s; }
-</style>
+    footer {
+      margin-top: 100px;
+      font-size: 0.9rem;
+      color: #6b7280;
+      text-align: center;
+    }
+  </style>
 </head>
 
-<body class="text-white">
+<body>
 
-<!-- ================= HERO ================= -->
-<section class="relative min-h-screen flex items-center justify-center text-center">
-
-  <!-- Cosmic Background -->
-  <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-
-    <!-- Sun -->
-    <div class="sun-glow"></div>
-
-    <!-- Block flow beams -->
-    <div class="connections">
-      <div class="beam b1"></div>
-      <div class="beam b2"></div>
-      <div class="beam b3"></div>
-    </div>
-
-    <!-- Orbit 1 -->
-    <div class="orbit one">
-      <div class="planet p1"></div>
-      <div class="planet p3"></div>
-    </div>
-
-    <!-- Orbit 2 -->
-    <div class="orbit two">
-      <div class="planet p1"></div>
-      <div class="planet p2"></div>
-      <div class="planet p3"></div>
-      <div class="planet p4"></div>
-    </div>
-
-    <!-- Orbit 3 -->
-    <div class="orbit three">
-      <div class="planet p1"></div>
-      <div class="planet p2"></div>
-      <div class="planet p3"></div>
-      <div class="planet p4"></div>
-      <div class="planet p5"></div>
-      <div class="planet p6"></div>
-    </div>
-  </div>
+  <!-- Animated Background -->
+  <canvas id="network-bg"></canvas>
 
   <!-- Content -->
-  <div class="relative z-10 max-w-3xl px-6 mx-auto text-center text-white">
+  <div class="page-content">
 
-  <section class="mb-10">
-    <h1 class="text-4xl md:text-5xl font-bold mb-2">Delthium</h1>
-    <h2 class="text-xl md:text-2xl text-gray-300 mb-4">
-      A Secure, Scalable Layer-1 Blockchain Infrastructure
-    </h2>
-    <p class="text-gray-400">
+    <h1>Delthium</h1>
+    <h2>A Secure, Scalable Layer-1 Blockchain Infrastructure</h2>
+
+    <p>
       Delthium is a next-generation blockchain network focused on security,
-      performance, and long-term sustainability for real-world applications.
+      performance, and long-term sustainability for real-world decentralized
+      applications.
     </p>
-  </section>
-<div class="mb-12 text-center">
-  <span class="inline-block px-8 py-3 rounded-full
-               border border-yellow-400 text-yellow-400
-               text-sm font-semibold tracking-wide
-               cursor-not-allowed">
-    🚧 DeFi App — Coming Soon
-  </span>
-</div>
-  <section class="mb-10 text-gray-300">
-    <h3 class="text-2xl font-semibold mb-3">What is Delthium?</h3>
-    <p class="mb-2">
-      Delthium is a Layer-1 blockchain designed to provide a reliable and
-      efficient foundation for decentralized applications and digital infrastructure.
-    </p>
-    <p>
-      The project emphasizes stability, transparency, and long-term usability
-      rather than short-term speculation.
-    </p>
-  </section>
 
-  <section class="mb-10 text-gray-300">
-    <h3 class="text-2xl font-semibold mb-4">Core Principles</h3>
+    <!-- Button to About Page -->
+    <a href="about.html" class="btn">
+      📘 Learn More About Delthium
+    </a>
 
-    <p><strong>Security First:</strong> Modern cryptography and best practices.</p>
-    <p><strong>Performance & Efficiency:</strong> Scalable and optimized design.</p>
-    <p><strong>Decentralization:</strong> Community-driven validator ecosystem.</p>
-    <p><strong>Long-Term Vision:</strong> Sustainable, real-world adoption.</p>
-  </section>
+    <section>
+      <h3>What is Delthium?</h3>
+      <p>
+        Delthium is an independent Layer-1 blockchain designed to provide a
+        reliable and efficient foundation for decentralized applications and
+        digital infrastructure. The project prioritizes stability, transparency,
+        and long-term usability over short-term speculation.
+      </p>
+    </section>
 
-  <section class="mb-10 text-gray-300">
-    <h3 class="text-2xl font-semibold mb-4">Roadmap</h3>
+    <section>
+      <h3>Core Principles</h3>
+      <ul>
+        <li><strong>Security First:</strong> Conservative, auditable engineering</li>
+        <li><strong>Performance & Efficiency:</strong> Scalable architecture</li>
+        <li><strong>Decentralization:</strong> Validator-driven governance</li>
+        <li><strong>Long-Term Vision:</strong> Sustainable adoption</li>
+      </ul>
+    </section>
 
-    <p><strong>Phase 1 – Foundation</strong></p>
-    <ul class="list-disc list-inside mb-3">
-      <li>Network architecture design</li>
-      <li>Core protocol development</li>
-      <li>Website and public presence</li>
-    </ul>
+    <section>
+      <h3>Project Status</h3>
+      <p>
+        Delthium is under active development. Documentation, testnet details,
+        and ecosystem updates will be published as the project progresses.
+      </p>
+    </section>
 
-    <p><strong>Phase 2 – Testnet</strong></p>
-    <ul class="list-disc list-inside mb-3">
-      <li>Public test network launch</li>
-      <li>Validator onboarding</li>
-      <li>Community testing</li>
-    </ul>
+    <footer>
+      © 2026 Delthium — Independent Blockchain Infrastructure
+    </footer>
 
-    <p><strong>Phase 3 – Mainnet</strong></p>
-    <ul class="list-disc list-inside">
-      <li>Mainnet deployment</li>
-      <li>Ecosystem tooling</li>
-      <li>Developer growth</li>
-    </ul>
-  </section>
+  </div>
 
-  <section class="text-gray-400">
-    <h3 class="text-2xl font-semibold mb-3 text-white">Project Status</h3>
-    <p>
-      Delthium is under active development. Documentation, testnet details,
-      and updates will be published as the project progresses.
-    </p>
-  </section>
+  <!-- Background Animation Script -->
+  <script>
+    const canvas = document.getElementById("network-bg");
+    const ctx = canvas.getContext("2d");
 
-</div>
-</section>
+    let w, h;
+    function resize() {
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
+    }
+    window.addEventListener("resize", resize);
+    resize();
 
-<!-- ================= SECOND SECTION ================= -->
-<section class="py-32 text-center bg-black">
-  <h2 class="text-3xl md:text-4xl font-bold mb-6">
-    Enter a New Era of DeFi
-  </h2>
-  <p class="text-gray-400 max-w-2xl mx-auto">
-    Delthium integrates liquidity, staking and governance
-    directly at the protocol level — enabling a secure,
-    scalable and globally connected DeFi ecosystem.
-  </p>
-</section>
+    const nodes = Array.from({ length: 60 }, () => ({
+      x: Math.random() * w,
+      y: Math.random() * h,
+      vx: (Math.random() - 0.5) * 0.35,
+      vy: (Math.random() - 0.5) * 0.35
+    }));
 
-<!-- ================= FOOTER ================= -->
-<footer class="py-10 text-center text-gray-500 border-t border-white/10">
-  © 2026 Δ Delthium Network · Sovereign Layer-1 Blockchain
-</footer>
+    function animate() {
+      ctx.clearRect(0, 0, w, h);
+
+      for (let i = 0; i < nodes.length; i++) {
+        const a = nodes[i];
+        a.x += a.vx;
+        a.y += a.vy;
+
+        if (a.x < 0 || a.x > w) a.vx *= -1;
+        if (a.y < 0 || a.y > h) a.vy *= -1;
+
+        ctx.beginPath();
+        ctx.arc(a.x, a.y, 2.2, 0, Math.PI * 2);
+        ctx.fillStyle = "#facc15";
+        ctx.fill();
+
+        for (let j = i + 1; j < nodes.length; j++) {
+          const b = nodes[j];
+          const d = Math.hypot(a.x - b.x, a.y - b.y);
+          if (d < 150) {
+            ctx.strokeStyle = `rgba(250,204,21,${1 - d / 150})`;
+            ctx.beginPath();
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(b.x, b.y);
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(animate);
+    }
+    animate();
+  </script>
 
 </body>
 </html>
-
-
-
