@@ -1,194 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Delthium Network</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About • Delthium</title>
 
-<style>
-/* ===== RESET ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-html, body {
-  width: 100%;
-  height: 100%;
-  background: #05070c;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  overflow: hidden;
-  color: #fff;
-}
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, sans-serif;
+      background: #05060a;
+      color: #e6e6e6;
+      overflow-x: hidden;
+    }
 
-/* ===== CANVAS BACKGROUND ===== */
-#network {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-}
+    /* ANIMATED BACKGROUND */
+    canvas {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+    }
 
-/* ===== CONTENT CARD ===== */
-.content {
-  position: relative;
-  z-index: 2;
-  max-width: 720px;
-  margin: 10vh auto;
-  padding: 32px;
-  background: rgba(15, 20, 30, 0.75);
-  border-radius: 18px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 0 40px rgba(255, 200, 120, 0.15);
-}
+    /* GLASS CONTAINER */
+    .page {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 80px auto 120px;
+      padding: 80px 32px;
 
-.content h1 {
-  text-align: center;
-  font-size: 2.2rem;
-  margin-bottom: 8px;
-}
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
 
-.content h2 {
-  text-align: center;
-  font-size: 1rem;
-  color: #bbb;
-  margin-bottom: 20px;
-}
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 0 45px rgba(255, 200, 120, 0.08);
+    }
 
-.button {
-  display: block;
-  width: fit-content;
-  margin: 20px auto;
-  padding: 12px 26px;
-  border-radius: 30px;
-  border: 1px solid #ffd37a;
-  color: #ffd37a;
-  text-decoration: none;
-  font-weight: 600;
-  background: transparent;
-}
+    /* HEADINGS */
+    h1 {
+      text-align: center;
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
 
-.section {
-  margin-top: 24px;
-}
+    .subtitle {
+      text-align: center;
+      color: #b5b5b5;
+      margin-bottom: 28px;
+      font-size: 16px;
+    }
 
-.section h3 {
-  margin-bottom: 10px;
-  color: #ffd37a;
-}
+    /* BUTTON */
+    .cta {
+      display: block;
+      width: fit-content;
+      margin: 0 auto 40px;
+      padding: 14px 36px;
+      border-radius: 40px;
+      border: 1px solid #f5c46a;
+      color: #f5c46a;
+      text-decoration: none;
+      font-weight: 600;
+      background: rgba(245, 196, 106, 0.08);
+    }
 
-.section p, .section li {
-  color: #ccc;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
+    /* SECTIONS */
+    section {
+      margin-bottom: 46px;
+    }
 
-ul {
-  padding-left: 20px;
-}
-</style>
+    h2 {
+      color: #f5c46a;
+      margin-bottom: 12px;
+      font-size: 24px;
+    }
+
+    p {
+      line-height: 1.7;
+      color: #d4d4d4;
+    }
+
+    ul {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+      color: #d8d8d8;
+    }
+
+    /* ROADMAP */
+    .roadmap {
+      margin-top: 18px;
+    }
+
+    .phase {
+      padding: 18px 20px;
+      border-left: 3px solid #f5c46a;
+      background: rgba(255, 255, 255, 0.03);
+      margin-bottom: 16px;
+      border-radius: 10px;
+    }
+
+    .phase h3 {
+      margin-bottom: 6px;
+      color: #ffffff;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      font-size: 14px;
+      color: #aaa;
+      margin-top: 60px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 640px) {
+      .page {
+        padding: 60px 20px;
+        margin: 60px 14px 100px;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<canvas id="network"></canvas>
+<canvas id="bg"></canvas>
 
-<div class="content">
+<div class="page">
+
   <h1>Delthium</h1>
-  <h2>Secure · Decentralized · Layer-1 Infrastructure</h2>
+  <div class="subtitle">
+    Secure • Decentralized • Layer-1 Infrastructure
+  </div>
 
-  <a class="button">🚧 DeFi App — Coming Soon</a>
+  <a class="cta">🚧 DeFi App — Coming Soon</a>
 
-  <div class="section">
-    <h3>Overview</h3>
+  <section>
+    <h2>Overview</h2>
     <p>
-      Delthium is an independent Layer-1 blockchain focused on security,
-      scalability, and long-term sustainability for real-world decentralized applications.
+      Delthium is an independent Layer-1 blockchain project focused on security,
+      scalability, and long-term sustainability for real-world decentralized
+      applications. The protocol emphasizes correctness, transparency, and
+      conservative engineering over short-term hype.
     </p>
-  </div>
+  </section>
 
-  <div class="section">
-    <h3>Core Principles</h3>
+  <section>
+    <h2>Core Principles</h2>
     <ul>
-      <li>Security-first conservative design</li>
-      <li>Efficient and scalable architecture</li>
-      <li>Validator-driven decentralization</li>
-      <li>Long-term sustainable adoption</li>
+      <li><strong>Security First</strong> — Auditable, conservative protocol design</li>
+      <li><strong>Performance</strong> — Efficient and scalable architecture</li>
+      <li><strong>Decentralization</strong> — Validator-driven governance</li>
+      <li><strong>Long-Term Vision</strong> — Sustainable real-world adoption</li>
     </ul>
-  </div>
+  </section>
 
-  <div class="section">
-    <h3>Roadmap</h3>
-    <p>Phase 1: Protocol foundation</p>
-    <p>Phase 2: Public testnet</p>
-    <p>Phase 3: Mainnet & ecosystem</p>
-  </div>
+  <section>
+    <h2>Roadmap</h2>
+
+    <div class="roadmap">
+      <div class="phase">
+        <h3>Phase 1 — Foundation</h3>
+        <p>
+          Core protocol architecture, consensus research, chain design,
+          website launch, and internal testing.
+        </p>
+      </div>
+
+      <div class="phase">
+        <h3>Phase 2 — Public Testnet</h3>
+        <p>
+          Open testnet launch, validator onboarding, stress testing,
+          and community feedback cycles.
+        </p>
+      </div>
+
+      <div class="phase">
+        <h3>Phase 3 — Mainnet</h3>
+        <p>
+          Mainnet deployment, tooling, documentation, and ecosystem
+          development for builders.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Transparency & Independence</h2>
+    <p>
+      Delthium is developed independently. There are no public token sales,
+      no financial guarantees, and no speculative promises. The project grows
+      through technical progress, community feedback, and open development.
+    </p>
+  </section>
+
+  <footer>
+    © 2026 Delthium • Built with long-term vision
+  </footer>
+
 </div>
 
 <script>
-/* ===== NETWORK ANIMATION ===== */
-const canvas = document.getElementById("network");
-const ctx = canvas.getContext("2d");
+  const canvas = document.getElementById("bg");
+  const ctx = canvas.getContext("2d");
 
-let w, h;
-function resize() {
-  w = canvas.width = window.innerWidth;
-  h = canvas.height = window.innerHeight;
-}
-window.addEventListener("resize", resize);
-resize();
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  window.addEventListener("resize", resize);
+  resize();
 
-const NODE_COUNT = 80;
-const nodes = [];
+  const nodes = Array.from({ length: 36 }, () => ({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    vx: (Math.random() - 0.5) * 0.35,
+    vy: (Math.random() - 0.5) * 0.35
+  }));
 
-for (let i = 0; i < NODE_COUNT; i++) {
-  nodes.push({
-    x: Math.random() * w,
-    y: Math.random() * h,
-    vx: (Math.random() - 0.5) * 0.4,
-    vy: (Math.random() - 0.5) * 0.4,
-    r: Math.random() * 2 + 1.5
-  });
-}
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-function draw() {
-  ctx.clearRect(0, 0, w, h);
+    for (let i = 0; i < nodes.length; i++) {
+      const a = nodes[i];
+      a.x += a.vx;
+      a.y += a.vy;
 
-  for (let i = 0; i < nodes.length; i++) {
-    const a = nodes[i];
+      if (a.x < 0 || a.x > canvas.width) a.vx *= -1;
+      if (a.y < 0 || a.y > canvas.height) a.vy *= -1;
 
-    a.x += a.vx;
-    a.y += a.vy;
+      ctx.beginPath();
+      ctx.arc(a.x, a.y, 2, 0, Math.PI * 2);
+      ctx.fillStyle = "#f5c46a";
+      ctx.fill();
 
-    if (a.x < 0 || a.x > w) a.vx *= -1;
-    if (a.y < 0 || a.y > h) a.vy *= -1;
+      for (let j = i + 1; j < nodes.length; j++) {
+        const b = nodes[j];
+        const dx = a.x - b.x;
+        const dy = a.y - b.y;
+        const d = Math.sqrt(dx * dx + dy * dy);
 
-    ctx.beginPath();
-    ctx.arc(a.x, a.y, a.r, 0, Math.PI * 2);
-    ctx.fillStyle = "#ffd37a";
-    ctx.fill();
-
-    for (let j = i + 1; j < nodes.length; j++) {
-      const b = nodes[j];
-      const dx = a.x - b.x;
-      const dy = a.y - b.y;
-      const dist = Math.sqrt(dx * dx + dy * dy);
-
-      if (dist < 140) {
-        ctx.strokeStyle = `rgba(255, 211, 122, ${1 - dist / 140})`;
-        ctx.lineWidth = 0.6;
-        ctx.beginPath();
-        ctx.moveTo(a.x, a.y);
-        ctx.lineTo(b.x, b.y);
-        ctx.stroke();
+        if (d < 140) {
+          ctx.strokeStyle = `rgba(245,196,106,${1 - d / 140})`;
+          ctx.beginPath();
+          ctx.moveTo(a.x, a.y);
+          ctx.lineTo(b.x, b.y);
+          ctx.stroke();
+        }
       }
     }
+    requestAnimationFrame(draw);
   }
-
-  requestAnimationFrame(draw);
-}
-
-draw();
+  draw();
 </script>
 
 </body>
