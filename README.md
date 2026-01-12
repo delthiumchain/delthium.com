@@ -1,78 +1,60 @@
-# Delthium
+# Delthium — The Blockchain
 
-**Delthium** is an independent Layer-1 blockchain project focused on security,
-scalability, and long-term sustainability for real-world decentralized
-applications.
+Delthium is an open-source, payment-first blockchain built using the Cosmos SDK framework.
 
-🌐 Website: https://delthium.com
+The project prioritizes predictable low fees, reliability, and real cross-border payments over hype-driven features.
 
----
-
-## Overview
-
-Delthium is being developed as a reliable base-layer blockchain infrastructure.
-The project prioritizes protocol stability, transparent design decisions, and
-long-term usability over short-term hype or speculation.
-
-The goal is to create a clean, secure, and developer-friendly foundation for
-future decentralized systems.
+🌐 **Official website:** https://delthium.com
 
 ---
 
-## Core Principles
+## 🔹 Core Identity
 
-- **Security First**  
-  Designed using modern cryptographic standards and conservative engineering.
+- **Blockchain name:** Delthium  
+- **Native token:** DLTHM  
+- **Base denom:** dlthm  
+- **Chain ID:** delthium-1  
+- **Binary:** delthiumd  
 
-- **Performance & Efficiency**  
-  Optimized transaction processing while maintaining decentralization.
-
-- **Decentralization**  
-  Validator-driven network with community participation at the core.
-
-- **Long-Term Vision**  
-  Focused on sustainable development and real-world adoption.
+DLTHM is the **native gas and settlement token of the Delthium blockchain**.
 
 ---
 
-## Roadmap (High-Level)
+## 🔹 Design Principles (Non-Negotiable)
 
-### Phase 1 — Foundation
-- Network architecture design
-- Core protocol development
-- Public website and documentation
+- Predictable and low transaction fees  
+- No privileged relayers or admin bridges  
+- IBC-native cross-chain transfers  
+- USDT via IBC (no custodial mint/burn bridges)  
+- Broad Cosmos wallet compatibility  
+- Token Factory support  
+- Payments first — everything else optional  
 
-### Phase 2 — Testnet
-- Public test network
-- Validator onboarding
-- Community testing and feedback
-
-### Phase 3 — Mainnet
-- Mainnet launch
-- Ecosystem tooling
-- Developer and community growth
+Delthium is designed to be **boring, stable, and reliable infrastructure**.
 
 ---
 
-## Project Status
+## 🔹 Project Status
 
-Delthium is currently under active development.  
-Documentation, testnet details, and further updates will be published as the
-project progresses.
+- Core chain build: ✅ Stable  
+- Genesis: ✅ Validated  
+- Mainnet: ⏳ In preparation  
+- IBC channels: ⏳ Planned post-launch  
 
----
-
-## Transparency & Independence
-
-Delthium is developed as an independent project.  
-There are currently **no public token sales, no investment promises, and no
-financial guarantees**.
-
-Community interest, feedback, and technical contributions are welcome.
+Development is ongoing and transparent.
 
 ---
 
-## License
+## 🔹 Official References
 
-License information will be published as the project matures.
+- **Official repository:** This GitHub repository  
+- **Official blockchain:** Delthium  
+- **Official native token:** DLTHM  
 
+Any other use of the name **“Delthium”** or ticker **“DLTHM”** outside this chain is **not associated** with this project.
+
+---
+
+## 🔹 License
+
+This project is open-source and released under the **Apache License 2.0**.
