@@ -3,28 +3,25 @@
 <head>
   <meta charset="UTF-8" />
 
-  <title>About Delthium | Secure Layer-1 Blockchain Infrastructure</title>
+  <title>About DELTHIUM — The Blockchain</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- SEO META TAGS -->
-  <meta name="description" content="Learn about Delthium, an independent Layer-1 blockchain focused on security, decentralization, and long-term sustainability for real-world applications." />
-
-  <meta name="keywords" content="Delthium, about delthium, layer 1 blockchain, decentralized blockchain, web3 infrastructure, crypto network" />
-
+  <meta name="description" content="DELTHIUM — The Blockchain is an open-source, decentralized, payment-first blockchain built with the Cosmos SDK for cross-chain and cross-border settlement using IBC." />
+  <meta name="keywords" content="DELTHIUM, DLTHM, payment blockchain, cross-chain settlement, cross-border payments, IBC, Cosmos SDK, token factory" />
   <meta name="robots" content="index, follow" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="About Delthium | Secure Layer-1 Blockchain" />
-  <meta property="og:description" content="Delthium is a security-first Layer-1 blockchain designed for scalable and sustainable decentralized applications." />
+  <meta property="og:title" content="About DELTHIUM — The Blockchain" />
+  <meta property="og:description" content="A decentralized Web3 settlement blockchain focused on predictable fees, cross-chain payments, and protocol-level security." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://delthium.com/about.html" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="About Delthium | Layer-1 Blockchain" />
-  <meta name="twitter:description" content="Discover Delthium’s vision, architecture, and roadmap for a secure decentralized future." />
-
+  <meta name="twitter:title" content="About DELTHIUM — The Blockchain" />
+  <meta name="twitter:description" content="Payment-first blockchain infrastructure for cross-chain and cross-border settlement." />
 
 <style>
 * {
@@ -46,9 +43,11 @@ nav {
   top: 0;
   width: 100%;
   z-index: 3;
-  background: rgba(0, 0, 0, 0.45);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.55);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
 }
+
 .nav-inner {
   max-width: 1100px;
   margin: auto;
@@ -57,21 +56,35 @@ nav {
   justify-content: space-between;
   align-items: center;
 }
+
 .nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-weight: 700;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
+  font-size: 15px;
 }
+
+.nav-logo img {
+  height: 32px;
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 0 6px rgba(245,196,106,0.4));
+}
+
 .nav-links a {
   color: #e6e6e6;
   text-decoration: none;
   margin-left: 22px;
   font-weight: 500;
 }
+
 .nav-links a:hover {
   color: #f5c46a;
 }
 
-/* BACKGROUND ANIMATION */
+/* BACKGROUND */
 canvas {
   position: fixed;
   inset: 0;
@@ -82,41 +95,50 @@ canvas {
 .container {
   position: relative;
   z-index: 1;
-  max-width: 920px;
+  max-width: 940px;
   margin: 140px auto 120px;
-  padding: 40px 28px;
-  text-align: left;
+  padding: 40px 30px;
 }
 
 h1 {
   font-size: 42px;
   text-align: center;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
 }
+
 .subtitle {
   text-align: center;
-  color: #bdbdbd;
-  margin-bottom: 40px;
+  color: #b0b0b0;
+  margin-bottom: 48px;
+  font-size: 15px;
 }
 
 .section {
-  margin-bottom: 42px;
+  margin-bottom: 52px;
 }
+
 .section h2 {
   color: #f5c46a;
-  margin-bottom: 14px;
-  font-size: 22px;
+  margin-bottom: 16px;
+  font-size: 21px;
+  letter-spacing: 0.3px;
 }
+
 .section p {
   color: #d6d6d6;
-  line-height: 1.75;
+  line-height: 1.8;
+  font-size: 15.5px;
 }
+
 .section ul {
   padding-left: 20px;
+  margin-top: 10px;
 }
+
 .section li {
-  margin-bottom: 8px;
-  line-height: 1.7;
+  margin-bottom: 10px;
+  line-height: 1.8;
   color: #d6d6d6;
 }
 
@@ -124,14 +146,15 @@ hr {
   border: none;
   height: 1px;
   background: linear-gradient(90deg, transparent, #f5c46a, transparent);
-  margin: 46px 0;
+  margin: 54px 0;
 }
 
 footer {
   text-align: center;
-  font-size: 14px;
-  color: #aaa;
-  margin-top: 20px;
+  font-size: 13.5px;
+  color: #9a9a9a;
+  margin-top: 40px;
+  line-height: 1.7;
 }
 
 @media (max-width: 640px) {
@@ -140,16 +163,22 @@ footer {
   }
   .container {
     margin: 120px 14px;
-    padding: 40px 20px;
+    padding: 36px 22px;
   }
 }
 </style>
 </head>
 
 <body>
+
 <nav>
   <div class="nav-inner">
-    <div class="nav-logo">Delthium</div>
+    <!-- LOGO + NAME (LEFT UPPER CORNER) -->
+    <div class="nav-logo">
+      <img src="assets/logo/delthium-logo.png" alt="DELTHIUM Logo">
+      <span>DELTHIUM</span>
+    </div>
+
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -160,67 +189,95 @@ footer {
 <canvas id="bg"></canvas>
 
 <div class="container">
-  <h1>About Delthium</h1>
-  <div class="subtitle">Secure • Decentralized • Layer-1 Infrastructure</div>
+  <h1>About DELTHIUM</h1>
+  <div class="subtitle">
+    Payment-First • Decentralized • Cross-Chain Settlement Blockchain
+  </div>
 
   <div class="section">
     <h2>Overview</h2>
     <p>
-      Delthium is an independent Layer-1 blockchain project focused on building
-      secure, scalable, and sustainable infrastructure for real-world decentralized applications.
+      <strong>DELTHIUM — The Blockchain</strong> is an open-source, decentralized,
+      payment-first blockchain built using the Cosmos SDK.
+      It is designed as a neutral settlement layer for cross-chain and cross-border
+      value transfer, prioritizing predictability, reliability, and protocol-level security.
     </p>
   </div>
 
   <hr />
 
   <div class="section">
-    <h2>Core Principles</h2>
-    <ul>
-      <li><strong>Security First:</strong> Conservative design and modern cryptography.</li>
-      <li><strong>Performance:</strong> Efficient and scalable transaction architecture.</li>
-      <li><strong>Decentralization:</strong> Validator-driven governance and community participation.</li>
-      <li><strong>Long-Term Vision:</strong> Sustainable growth and real-world adoption.</li>
-    </ul>
-  </div>
-
-  <hr />
-
-  <div class="section">
-    <h2>Roadmap</h2>
-    <ul>
-      <li><strong>Phase 1 — Foundation:</strong> Protocol design and internal testing.</li>
-      <li><strong>Phase 2 — Testnet:</strong> Public testnet, validator onboarding, stress testing.</li>
-      <li><strong>Phase 3 — Mainnet:</strong> Network deployment, ecosystem growth, and developer integration.</li>
-    </ul>
-  </div>
-
-  <hr />
-
-  <div class="section">
-    <h2>Project Status</h2>
+    <h2>Purpose-Built for Payments</h2>
     <p>
-      Delthium is currently under active development. Technical documentation,
-      testnet details, and ecosystem updates will be shared as the project evolves.
+      Unlike general-purpose blockchains optimized for speculation, DELTHIUM focuses
+      exclusively on payments and settlement. The protocol intentionally avoids
+      unnecessary DeFi, NFT, and experimental features that increase risk and fee volatility.
     </p>
   </div>
 
   <hr />
 
   <div class="section">
-    <h2>Transparency & Independence</h2>
+    <h2>Cross-Chain & Cross-Border Settlement</h2>
     <p>
-      Delthium is developed as an independent initiative — no public token sales,
-      no investment promises, and no financial guarantees. The focus remains
-      on engineering excellence and sustainable network growth.
+      DELTHIUM uses Inter-Blockchain Communication (IBC) as a native protocol
+      to enable secure cross-chain asset transfers without custodial bridges
+      or privileged intermediaries.
+    </p>
+    <p>
+      This architecture enables real cross-border settlement using decentralized
+      infrastructure, including stable assets such as USDT transferred via IBC
+      without mint/burn trust assumptions.
     </p>
   </div>
 
-  <footer>© 2026 Delthium Network</footer>
+  <hr />
+
+  <div class="section">
+    <h2>Native Token & Asset Issuance</h2>
+    <p>
+      <strong>DLTHM</strong> is the native gas and settlement token of the DELTHIUM network.
+      Transaction fees are designed to remain predictable and stable under normal usage.
+    </p>
+    <p>
+      DELTHIUM includes native <strong>Token Factory</strong> support, allowing
+      permissionless issuance of chain-native assets without custom smart contracts.
+    </p>
+  </div>
+
+  <hr />
+
+  <div class="section">
+    <h2>Decentralization & Trust Model</h2>
+    <p>
+      DELTHIUM is validator-driven and fully decentralized. There are no admin keys,
+      no privileged relayers, and no centralized control paths. Security derives from
+      protocol design, validator consensus, and IBC guarantees — not trust.
+    </p>
+  </div>
+
+  <hr />
+
+  <div class="section">
+    <h2>Open-Source & Governance Philosophy</h2>
+    <p>
+      DELTHIUM is open-source software released under the
+      <strong>Apache License 2.0</strong>.
+      Development is conservative, transparent, and focused on long-term
+      operational reliability rather than rapid feature expansion.
+    </p>
+  </div>
+
+  <footer>
+    © 2026 DELTHIUM — The Blockchain<br />
+    Open-source software released under Apache License 2.0
+  </footer>
 </div>
 
 <script>
 const c = document.getElementById("bg");
 const ctx = c.getContext("2d");
+
 function resize() {
   c.width = innerWidth;
   c.height = innerHeight;
@@ -247,18 +304,16 @@ function draw() {
     if (a.y < 0 || a.y > c.height) a.vy *= -1;
 
     ctx.beginPath();
-    ctx.arc(a.x, a.y, 2.8, 0, Math.PI * 2);
+    ctx.arc(a.x, a.y, 2.6, 0, Math.PI * 2);
     ctx.fillStyle = "#f5c46a";
     ctx.fill();
 
     for (let j = i + 1; j < nodes.length; j++) {
       const b = nodes[j];
-      const dx = a.x - b.x;
-      const dy = a.y - b.y;
-      const d = Math.sqrt(dx * dx + dy * dy);
+      const d = Math.hypot(a.x - b.x, a.y - b.y);
       if (d < 160) {
         ctx.strokeStyle = `rgba(245,196,106,${1 - d / 160})`;
-        ctx.lineWidth = 1.8; // ✅ thicker connection lines
+        ctx.lineWidth = 1.6;
         ctx.beginPath();
         ctx.moveTo(a.x, a.y);
         ctx.lineTo(b.x, b.y);
@@ -270,5 +325,6 @@ function draw() {
 }
 draw();
 </script>
+
 </body>
 </html>
