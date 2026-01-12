@@ -1,57 +1,36 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
 
-  <title>Delthium – Layer-1 Blockchain</title>
+  <title>DELTHIUM — The Blockchain</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- SEO META TAGS -->
-  <meta name="description" content="Delthium is a secure, decentralized Layer-1 blockchain focused on scalability, sustainability, and real-world decentralized applications.">
-  <meta name="keywords" content="Delthium, Layer-1 blockchain, web3, decentralized, crypto infrastructure, blockchain network">
+  <meta name="description" content="DELTHIUM — The Blockchain is an open-source, decentralized, payment-first blockchain built with the Cosmos SDK. It supports cross-chain and cross-border payments via IBC, with DLTHM as the native gas and settlement token and native Token Factory support.">
+  <meta name="keywords" content="DELTHIUM, DLTHM, decentralized blockchain, cross-chain payments, cross-border payments, IBC, Cosmos SDK, token factory">
   <meta name="robots" content="index, follow">
 
-  <!-- Open Graph (Google, WhatsApp, LinkedIn) -->
-  <meta property="og:title" content="Delthium — Secure Layer-1 Blockchain">
-  <meta property="og:description" content="Independent Layer-1 blockchain focused on security, decentralization, and long-term adoption.">
+  <!-- Open Graph -->
+  <meta property="og:title" content="DELTHIUM — The Blockchain">
+  <meta property="og:description" content="A decentralized, payment-first blockchain for cross-chain and cross-border settlement using IBC.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://delthium.com/">
 
-  <!-- Twitter Preview -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Delthium — Secure Layer-1 Blockchain">
-  <meta name="twitter:description" content="Independent Layer-1 blockchain infrastructure project.">
+  <meta name="theme-color" content="#0b0f14">
 
-<!-- Schema: Organization + Website -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://delthium.com/#organization",
-      "name": "Delthium",
-      "url": "https://delthium.com/",
-      "description": "Delthium is a secure, decentralized Layer-1 blockchain infrastructure focused on scalability, security, and transparency.",
-      "sameAs": [
-        "https://github.com/delthiumchain"
-      ]
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://delthium.com/#website",
-      "url": "https://delthium.com/",
-      "name": "Delthium",
-      "publisher": {
-        "@id": "https://delthium.com/#organization"
-      }
-    }
-  ]
-}
-</script>
-  
+  <!-- Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "DELTHIUM",
+    "url": "https://delthium.com/",
+    "description": "DELTHIUM — The Blockchain is an open-source, decentralized, payment-first blockchain released under the Apache License 2.0."
+  }
+  </script>
+
   <style>
     html, body {
       margin: 0;
@@ -62,7 +41,6 @@
       overflow-x: hidden;
     }
 
-    /* ===== Animated Background ===== */
     #network-bg {
       position: fixed;
       top: 0;
@@ -72,7 +50,6 @@
       z-index: 0;
     }
 
-    /* ===== Page Content ===== */
     .page-content {
       position: relative;
       z-index: 2;
@@ -84,11 +61,12 @@
 
     h1 {
       font-size: 3rem;
-      margin-bottom: 10px;
+      margin-bottom: 6px;
+      letter-spacing: 1px;
     }
 
     h2 {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       font-weight: 400;
       color: #9ca3af;
       margin-bottom: 24px;
@@ -98,14 +76,13 @@
       font-size: 1.05rem;
       line-height: 1.7;
       color: #d1d5db;
-      max-width: 720px;
-      margin: auto;
+      max-width: 760px;
+      margin: 14px auto;
     }
 
-    /* ===== Button ===== */
     .btn {
       display: inline-block;
-      margin-top: 36px;
+      margin-top: 28px;
       padding: 14px 36px;
       border-radius: 999px;
       border: 1px solid #facc15;
@@ -113,7 +90,6 @@
       text-decoration: none;
       font-weight: 600;
       letter-spacing: 0.3px;
-      backdrop-filter: blur(8px);
       transition: all 0.3s ease;
     }
 
@@ -122,14 +98,13 @@
       box-shadow: 0 0 22px rgba(250, 204, 21, 0.4);
     }
 
-    /* ===== Sections ===== */
     section {
       margin-top: 80px;
       text-align: left;
     }
 
     section h3 {
-      font-size: 1.6rem;
+      font-size: 1.55rem;
       margin-bottom: 14px;
       color: #f9fafb;
     }
@@ -143,149 +118,199 @@
       color: #d1d5db;
     }
 
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table td {
+      padding: 10px 8px;
+      border-bottom: 1px solid #1f2933;
+      color: #d1d5db;
+    }
+
+    table td:first-child {
+      color: #9ca3af;
+      width: 35%;
+    }
+
     footer {
-      margin-top: 100px;
-      font-size: 0.9rem;
-      color: #6b7280;
+      margin-top: 110px;
+      font-size: 0.85rem;
+      color: #9ca3af;
       text-align: center;
+      line-height: 1.6;
+    }
+
+    .logo {
+      height: 72px;
+      max-width: 240px;
     }
   </style>
 
   <!-- FAVICON -->
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
-<link rel="manifest" href="/assets/favicon/site.webmanifest">
-<link rel="shortcut icon" href="/assets/favicon/favicon.ico">
-  
+  <link rel="icon" href="assets/favicon/favicon.ico">
 </head>
 
 <body>
-  
-<header style="
-  position: relative;
-  z-index: 10;
-  padding: 24px;
-  display: flex;
-  justify-content: center;
-">
+
+<header style="position: relative; z-index: 10; padding: 24px; display: flex; justify-content: center;">
   <img
     src="assets/logo/delthium-logo.png"
-    alt="Delthium Logo"
-    height="72"
+    alt="DELTHIUM Logo"
+    class="logo"
+    onerror="this.style.display='none'"
   />
 </header>
-  
-  <!-- Animated Background -->
-  <canvas id="network-bg"></canvas>
 
-  <!-- Content -->
-  <div class="page-content">
+<canvas id="network-bg"></canvas>
 
-    <h1>Delthium</h1>
-    <h2>A Secure, Scalable Layer-1 Blockchain Infrastructure</h2>
+<div class="page-content">
 
+  <h1>DELTHIUM</h1>
+  <h2>The Blockchain</h2>
+
+  <p>
+    <strong>DELTHIUM</strong> is an open-source, decentralized, payment-first blockchain
+    built using the Cosmos SDK. It is designed for
+    <strong>cross-chain</strong> and <strong>cross-border payments</strong>
+    using <strong>IBC</strong>, with predictable low fees powered by
+    <strong>DLTHM</strong>, the native gas and settlement token.
+  </p>
+
+  <!-- ABOUT PAGE BUTTON (RESTORED) -->
+  <a href="about.html" class="btn">
+    📘 Learn More About DELTHIUM
+  </a>
+
+  <section>
+    <h3>Core Identity</h3>
+    <table>
+      <tr><td>Blockchain Name</td><td>DELTHIUM</td></tr>
+      <tr><td>Native Token</td><td>DLTHM</td></tr>
+      <tr><td>Base Denomination</td><td>dlthm</td></tr>
+      <tr><td>Chain ID</td><td>delthium-1</td></tr>
+      <tr><td>Binary</td><td>delthiumd</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h3>Cross-Chain Payments</h3>
     <p>
-      Delthium is a next-generation blockchain network focused on security,
-      performance, and long-term sustainability for real-world decentralized
-      applications.
+      DELTHIUM enables native cross-chain payments using Inter-Blockchain Communication (IBC).
+      Assets move between chains without custodial bridges, privileged relayers, or admin control.
     </p>
+  </section>
 
-    <!-- Button to About Page -->
-    <a href="about.html" class="btn">
-      📘 Learn More About Delthium
-    </a>
+  <section>
+    <h3>Cross-Border Payments</h3>
+    <p>
+      By acting as a neutral settlement layer, DELTHIUM supports real cross-border payments
+      across regions and jurisdictions. Stable assets such as USDT can move via IBC without
+      custodial mint/burn bridges, reducing trust assumptions in international settlement.
+    </p>
+  </section>
 
-    <section>
-      <h3>What is Delthium?</h3>
-      <p>
-        Delthium is an independent Layer-1 blockchain designed to provide a
-        reliable and efficient foundation for decentralized applications and
-        digital infrastructure. The project prioritizes stability, transparency,
-        and long-term usability over short-term speculation.
-      </p>
-    </section>
+  <section>
+    <h3>Decentralization by Design</h3>
+    <p>
+      DELTHIUM is validator-driven and fully decentralized. There are no privileged relayers,
+      no admin bridges, and no centralized control paths. Security comes from protocol design,
+      not trust.
+    </p>
+  </section>
 
-    <section>
-      <h3>Core Principles</h3>
-      <ul>
-        <li><strong>Security First:</strong> Conservative, auditable engineering</li>
-        <li><strong>Performance & Efficiency:</strong> Scalable architecture</li>
-        <li><strong>Decentralization:</strong> Validator-driven governance</li>
-        <li><strong>Long-Term Vision:</strong> Sustainable adoption</li>
-      </ul>
-    </section>
+  <section>
+    <h3>Native Token & Token Factory</h3>
+    <p>
+      <strong>DLTHM</strong> is the native token used for transaction fees and settlement.
+      DELTHIUM includes native <strong>Token Factory</strong> support, enabling permissionless
+      issuance of chain-native assets without custom smart contracts.
+    </p>
+  </section>
 
-    <section>
-      <h3>Project Status</h3>
-      <p>
-        Delthium is under active development. Documentation, testnet details,
-        and ecosystem updates will be published as the project progresses.
-      </p>
-    </section>
+  <section>
+    <h3>Design Principles (Non-Negotiable)</h3>
+    <ul>
+      <li>Predictable and low transaction fees</li>
+      <li>Payments-first architecture</li>
+      <li>IBC-native cross-chain transfers</li>
+      <li>Cross-border settlement focus</li>
+      <li>No custodial bridges or admin relayers</li>
+      <li>Validator-driven decentralization</li>
+      <li>Token Factory support</li>
+      <li>Broad Cosmos wallet compatibility</li>
+    </ul>
+  </section>
 
-    <footer>
-      © 2026 Delthium — Independent Blockchain Infrastructure
-    </footer>
+  <section>
+    <h3>Project Status</h3>
+    <p>
+      The DELTHIUM core chain is stable and under active development.
+      Genesis has been validated.
+      Mainnet launch is in preparation, with IBC channels planned post-launch.
+    </p>
+  </section>
 
-  </div>
+  <footer>
+    © 2026 DELTHIUM — The Blockchain<br>
+    Open-source software released under the <strong>Apache License 2.0</strong>
+  </footer>
 
-  <!-- Background Animation Script -->
-  <script>
-    const canvas = document.getElementById("network-bg");
-    const ctx = canvas.getContext("2d");
+</div>
 
-    let w, h;
-    function resize() {
-      w = canvas.width = window.innerWidth;
-      h = canvas.height = window.innerHeight;
-    }
-    window.addEventListener("resize", resize);
-    resize();
+<script>
+  const canvas = document.getElementById("network-bg");
+  const ctx = canvas.getContext("2d");
 
-    const nodes = Array.from({ length: 60 }, () => ({
-      x: Math.random() * w,
-      y: Math.random() * h,
-      vx: (Math.random() - 0.5) * 0.35,
-      vy: (Math.random() - 0.5) * 0.35
-    }));
+  let w, h;
+  function resize() {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+  }
+  window.addEventListener("resize", resize);
+  resize();
 
-    function animate() {
-      ctx.clearRect(0, 0, w, h);
+  const nodes = Array.from({ length: 60 }, () => ({
+    x: Math.random() * w,
+    y: Math.random() * h,
+    vx: (Math.random() - 0.5) * 0.35,
+    vy: (Math.random() - 0.5) * 0.35
+  }));
 
-      for (let i = 0; i < nodes.length; i++) {
-        const a = nodes[i];
-        a.x += a.vx;
-        a.y += a.vy;
+  function animate() {
+    ctx.clearRect(0, 0, w, h);
 
-        if (a.x < 0 || a.x > w) a.vx *= -1;
-        if (a.y < 0 || a.y > h) a.vy *= -1;
+    for (let i = 0; i < nodes.length; i++) {
+      const a = nodes[i];
+      a.x += a.vx;
+      a.y += a.vy;
 
-        ctx.beginPath();
-        ctx.arc(a.x, a.y, 2.2, 0, Math.PI * 2);
-        ctx.fillStyle = "#facc15";
-        ctx.fill();
+      if (a.x < 0 || a.x > w) a.vx *= -1;
+      if (a.y < 0 || a.y > h) a.vy *= -1;
 
-        for (let j = i + 1; j < nodes.length; j++) {
-          const b = nodes[j];
-          const d = Math.hypot(a.x - b.x, a.y - b.y);
-          if (d < 150) {
-            ctx.strokeStyle = `rgba(250,204,21,${1 - d / 150})`;
-            ctx.beginPath();
-            ctx.moveTo(a.x, a.y);
-            ctx.lineTo(b.x, b.y);
-            ctx.stroke();
-          }
+      ctx.beginPath();
+      ctx.arc(a.x, a.y, 2.2, 0, Math.PI * 2);
+      ctx.fillStyle = "#facc15";
+      ctx.fill();
+
+      for (let j = i + 1; j < nodes.length; j++) {
+        const b = nodes[j];
+        const d = Math.hypot(a.x - b.x, a.y - b.y);
+        if (d < 150) {
+          ctx.strokeStyle = `rgba(250,204,21,${1 - d / 150})`;
+          ctx.beginPath();
+          ctx.moveTo(a.x, a.y);
+          ctx.lineTo(b.x, b.y);
+          ctx.stroke();
         }
       }
-      requestAnimationFrame(animate);
     }
-    animate();
-  </script>
+    requestAnimationFrame(animate);
+  }
+  animate();
+</script>
 
 </body>
 </html>
-
-
-
-
