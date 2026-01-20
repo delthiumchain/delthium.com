@@ -32,23 +32,23 @@
   </script>
 
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: #0b0f14;
-      color: #e5e7eb;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      overflow-x: hidden;
-    }
-
-    #network-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: 0;
-    }
+html, body {
+  margin: 0;
+  padding: 0;
+  background:
+    linear-gradient(
+      rgba(11, 15, 20, 0.82),
+      rgba(11, 15, 20, 0.82)
+    ),
+    url("assets/images/network-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #e5e7eb;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+}
 
     .page-content {
       position: relative;
@@ -164,7 +164,7 @@
   />
 </header>
 
-<canvas id="network-bg"></canvas>
+
 
 <div class="page-content">
 
@@ -260,57 +260,7 @@
 
 </div>
 
-<script>
-  const canvas = document.getElementById("network-bg");
-  const ctx = canvas.getContext("2d");
-
-  let w, h;
-  function resize() {
-    w = canvas.width = window.innerWidth;
-    h = canvas.height = window.innerHeight;
-  }
-  window.addEventListener("resize", resize);
-  resize();
-
-  const nodes = Array.from({ length: 60 }, () => ({
-    x: Math.random() * w,
-    y: Math.random() * h,
-    vx: (Math.random() - 0.5) * 0.35,
-    vy: (Math.random() - 0.5) * 0.35
-  }));
-
-  function animate() {
-    ctx.clearRect(0, 0, w, h);
-
-    for (let i = 0; i < nodes.length; i++) {
-      const a = nodes[i];
-      a.x += a.vx;
-      a.y += a.vy;
-
-      if (a.x < 0 || a.x > w) a.vx *= -1;
-      if (a.y < 0 || a.y > h) a.vy *= -1;
-
-      ctx.beginPath();
-      ctx.arc(a.x, a.y, 2.2, 0, Math.PI * 2);
-      ctx.fillStyle = "#facc15";
-      ctx.fill();
-
-      for (let j = i + 1; j < nodes.length; j++) {
-        const b = nodes[j];
-        const d = Math.hypot(a.x - b.x, a.y - b.y);
-        if (d < 150) {
-          ctx.strokeStyle = `rgba(250,204,21,${1 - d / 150})`;
-          ctx.beginPath();
-          ctx.moveTo(a.x, a.y);
-          ctx.lineTo(b.x, b.y);
-          ctx.stroke();
-        }
-      }
-    }
-    requestAnimationFrame(animate);
-  }
-  animate();
-</script>
 
 </body>
 </html>
+
